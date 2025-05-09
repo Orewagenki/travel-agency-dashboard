@@ -1,7 +1,14 @@
 import {Link, NavLink} from 'react-router';
-import {SidebarItems} from "~/constants":
+import {SidebarItems} from "~/constants";
+import {cn} from "~/lib/utils";
 
 const NavItems = () => {
+const user = {
+  name: 'Joey',
+  email: 'Joey@gmail.com',
+  imageUrl: '/assets/images/david.webp'
+}
+  
   return (
       <section className="nav-items">
         <Link to='/' className="link-logo">
@@ -14,13 +21,23 @@ const NavItems = () => {
             {sidebarItems.map(({id, href, icon, label}) => (
               <NavLink to={href} key={id}>
                 {({isActive} : {isActive: boolean}) => (
-                  <div className={}>
+                  <div className={cn('group nav-items',{
+                    'bg-primary-100 !text-white' : isActive
+                  })}>
+                    <img
+                      src={icon}
+                      alt={label}
+                      className={'group-hover:brightness-0 size-0 group-hover:invert ${isActive ? 'brightness-0 invert' : 'text-dark-200'}'}
+                      />
                     {label}
                   </div>
                 )}
               </NavLink>  
             ))}
           </nav>
+          <footer>
+          
+          </footer>
         </div>
         </section>
     )
