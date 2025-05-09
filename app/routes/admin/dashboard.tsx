@@ -1,6 +1,10 @@
+import Header from "../../../components";
+
 const Dashboard = () => {
   return(
-    <div>Dashboard</div>  
+    <main className="dashboard wrapper">
+        <Header/>  
+    </main>  
   )
 }
 
