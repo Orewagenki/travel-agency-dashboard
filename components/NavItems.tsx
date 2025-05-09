@@ -2,7 +2,7 @@
 import {SidebarItems} from "~/constants";
 import {cn} from "~/lib/utils";
 
-const NavItems = () => {
+const NavItems = ({handleClick} : {handleClick?: () => void}) => {
 const user = {
   name: 'Joey',
   email: 'Joey@gmail.com',
@@ -23,7 +23,7 @@ const user = {
                 {({isActive} : {isActive: boolean}) => (
                   <div className={cn('group nav-items',{
                     'bg-primary-100 !text-white' : isActive
-                  })}>
+                  })} onCLick={handleClick}>
                     <img
                       src={icon}
                       alt={label}
