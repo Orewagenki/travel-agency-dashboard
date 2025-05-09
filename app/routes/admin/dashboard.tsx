@@ -9,6 +9,7 @@ const Dashboard = () => {
             title={`Welcome ${user?.name ?? 'Guest'}👋`}
           descrpition="Track activity, trends and popular destinations in real time"
           />  
+      Dashboard page contents
     </main>  
   )
 }
