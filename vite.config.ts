@@ -3,6 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+export default defineConfig(config => {
+  return {
+    plugins: [tailwindcss(), tsconfigPaths(), reactRouter(), sentryReactRouter(sentryConfig, config)],
+    sentryConfig,
+    ssr: {
+      noExternal: [/@syncfusion/]
+    }
+  };
 });
+
