@@ -1,4 +1,4 @@
-import {Header} from "../../../components";
+import {Header,StatsCard,TripCard} from "../../../components";
 
 const Dashboard = () => {
   const user = {name: "Adrian"};
@@ -9,7 +9,8 @@ const Dashboard = () => {
             title={`Welcome ${user?.name ?? 'Guest'}👋`}
           descrpition="Track activity, trends and popular destinations in real time"
           />  
-      Dashboard page contents
+      <StatsCard/>
+      <TripCard/>
     </main>  
   )
 }
